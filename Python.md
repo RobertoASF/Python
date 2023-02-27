@@ -1,3 +1,7 @@
+[![Python](https://img.shields.io/badge/Python-3.10+-green?style=flat&logo=python&logoColor=white&labelColor=101010)](https://python.org)
+![Last commit](https://img.shields.io/github/last-commit/RobertoASF/Python?logo=git&logoColor=green)
+
+
 # Python
 
 ---
@@ -333,8 +337,11 @@ False
 False
 ```
 
-* **join()**: Une todos los elementos de una tupla dentro de un string usando un separador (string sobre el que se aplica el método join)
+* **join(iterable)**: Une todos los elementos de un objeto iterable dentro de un string usando un separador (string sobre el que se aplica el método join)
 
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| iterable | **Requerido**: cualquier objeto iterable donde todos los valores retornados sean string|
 ```python
 >>> nombres = ('Roberto', 'Andrés', 'Sánchez', 'Franco')
 >>> nombre_completo = " ".join(nombres)
@@ -402,9 +409,18 @@ Hola chau!
 | valor | **Requerido**: string a buscar|
 
 ```python
+>>> texto = 'Hello, World! From Python'
+>>> print(texto.partition("World!"))
+('Hello, ', 'World!', ' From Python')
 ```
 
-* **replace()**: devuelve un string donde un valor específico ha sido reemplazado por por un valor indicado
+* **replace(oldvalue, newvalue, count)**: devuelve un string donde un valor específico ha sido reemplazado por por un valor indicado
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| oldvalue | **Requerido**: string a buscar|
+| newvalue | **Requerido**: string a reemplazar |
+| count | **Opcional**: numero especifico de cantidad de ocurrencias del antiguo valor a reemplazar, por defecto reemplaza todas las ocurrencias |
 
 ```python
 >>> texto = 'Hello World! From Python'
@@ -412,32 +428,81 @@ Hola chau!
 Hello World! From Chile
 ```
 
-* **rfind()**: Searches the string for a specified value and returns the last position of where it was found
+* **rfind(value, start, end)**: Searches the string for a specified value and returns the last position of where it was found. En caso de no encontrar el valor devuelve -1
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| value | **Requerido**: valor a buscar |
+| start | **Opcional**: valor de posicion de inicio de la busqueda, por defecto 0 |
+| end | **Opcional**: valor del posicion del final de la busqueda |
 
 ```python
+>>> texto = 'Hello World! From Python'
+>>> print(texto.rfind('m'))
+16
+
+>>> texto = 'Hello World! From Python'
+>>> print(texto.rfind('m',0,15))
+-1
 ```
 
 * **rindex()**: Searches the string for a specified value and returns the last position of where it was found
 
-```python
-```
-
-* **rjust()**: Returns a right justified version of the string
-
-```python
-```
-
-* **partition()**: Returns a tuple where the string is parted into three parts
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| value | **Requerido**: valor a buscar |
+| start | **Opcional**: valor de posicion de inicio de la busqueda, por defecto 0 |
+| end | **Opcional**: valor del posicion del final de la busqueda, por defecto el final del string |
 
 ```python
+>>> texto = 'Hello World! From Python'
+>>> print(texto.rindex('o'))
+22
 ```
 
-* **rsplit()**: Splits the string at the specified separator, and returns a list
+* **rjust(length, character)**: Returns a right justified version of the string
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| length | **Requerido**: largo del string a devolver |
+| character | **Opcional**: caracter con el que rellenar, por defecto es espacio " "|
 
 ```python
+>>> texto = 'Python'
+>>> print(texto.rjust(20,'_'))
+______________Python
 ```
 
-* **rstrip()**: Returns a right trim version of the string
+* **rsplit(separator, maxsplit)**: Splits the string at the specified separator, and returns a list
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| separator | **Opcional**: especifica el separador que se va a usar |
+| maxsplit | **Opcional**: especifica cuandos separaciones debe hacer, valor por defecto es -1 ("todas las ocurrencias") |
+
+```python
+>>> texto = "python, java, rust"
+>>> print(texto.rsplit(", "))
+['python', 'java', 'rust']
+
+>>> texto = "python, java, rust"
+>>> print(texto.rsplit(", ",1))
+['python, java', 'rust']
+
+>>> texto = "manzana confitada"
+>>> print(texto.rsplit("a"))
+['m', 'nz', 'n', ' confit', 'd', '']
+
+>>> texto = "manzana confitada"
+>>> print(texto.rsplit("a",3))
+['manzan', ' confit', 'd', '']
+```
+
+* **rstrip(characters)**: Returns a right trim version of the string
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| characters | **Opcional**:  |
 
 ```python
 ```
