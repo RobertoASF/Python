@@ -9,10 +9,12 @@
 
 ## Índice
 
+* [Tipos de datos](#tipos-de-datos)
 * [Variables](#variables)
 * [Tipos de datos](#tipos-de-datos)
   * [Enteros](#enteros)
   * [Flotantes](#flotantes)
+  * [Complejos](#complejos)
   * [Métodos de tipos numéricos](#métodos-de-tipos-numéricos)
   * [String](#string)
     * [Métodos de los string](#métodos-de-los-string)
@@ -33,9 +35,26 @@
 
 ___
 
+## Tipos de datos
+
+| Familia | Tipo |
+|-------- |------| 
+| Text Type |	[strings](#string) |
+| Numeric Types |	[integer](#enteros), [float](#flotantes), [complex](#complejos) |
+| Sequence Types |	[listas](#listas), [tuplas](#tuplas), range |
+| Mapping Type | 	[diccionarios](#diccionarios) |
+| Set Types |	[set](#sets), frozenset |
+| Boolean Type |	[bool](#booleanos) |
+| Binary Types | 	bytes, bytearray, memoryview |
+| None Type | 	NoneType |
+
 ## Variables
 
-## Tipos de datos
+### Formas de nombrar una variable
+### Reglas para nombrar variables
+### Convenciones
+variables en snake case
+
 
 ### Enteros
 
@@ -45,9 +64,121 @@ Los número enteros en python son aquellos que no tienen parte decimal
 
 ### Flotantes
 
-`altura = 1.75 `
+`altura = 1.75 `  
+`edad = 30. `
+
+### Complejos
+
 
 ### Métodos de tipos numéricos
+
+* **abs(x)**: devuelve el valor absoluto de x.
+
+```python
+
+```
+
+* **int(x)**: convierte x a un entero.
+
+```python
+
+```
+
+* **float(x)** : convierte x a un número decimal.
+
+```python
+
+```
+
+* **complex(real, imag)**: crea un número complejo con la parte real real y la parte imaginaria imag.
+
+```python
+
+```
+
+* **pow(x, y[, z])**: devuelve x elevado a la potencia y, si se proporciona z se aplica el operador módulo.
+
+```python
+
+```
+
+* **divmod(x, y)**: devuelve el cociente y el resto de la división de x entre y.
+
+```python
+
+```
+
+* **round(x[, n])**: devuelve el número x redondeado al número de dígitos especificado por n.
+
+```python
+
+```
+
+* **max(iterable[, args...][key])**: devuelve el valor máximo en iterable, o el valor máximo entre los argumentos args, opcionalmente utilizando una función de key para comparar los elementos.
+
+```python
+
+```
+
+* **min(iterable[, args...][key])**: devuelve el valor mínimo en iterable, o el valor mínimo entre los argumentos args, opcionalmente utilizando una función de key para comparar los elementos.
+
+```python
+
+```
+
+* **sum(iterable[, start])**: devuelve la suma de los elementos en iterable, opcionalmente comenzando por el valor start.
+
+```python
+
+```
+
+* **len(s)**: devuelve la longitud de la secuencia s.
+
+```python
+
+```
+
+* **hex(x)**: convierte x a una cadena que representa el valor en formato hexadecimal.
+
+```python
+
+```
+
+* **oct(x)**: convierte x a una cadena que representa el valor en formato octal.
+
+```python
+
+```
+
+* **bin(x)**: convierte x a una cadena que representa el valor en formato binario.
+
+```python
+
+```
+
+* **isinstance(x, int/float/complex)**: devuelve True si x es una instancia de la clase int, float, o complex.
+
+```python
+
+```
+
+* **is_integer()**: devuelve True si el número es un entero, de lo contrario devuelve False.
+
+```python
+
+```
+
+* **real**: devuelve la parte real del número complejo.
+
+```python
+
+```
+
+* **imag**: devuelve la parte imaginaria del número complejo.
+
+```python
+
+```
 
 ## String
 
@@ -602,33 +733,58 @@ estudiando Python para IA
 * **swapcase()**: Devuelve un string donde todas las letras mayúsculas son minúsculas y viceversa.
 
 ```python
-texto = 'Hello World! from Python'
-print(texto.swapcase())
+>>> texto = 'Hello World! from Python'
+>>> print(texto.swapcase())
 hELLO wORLD! FROM pYTHON
 
-texto = 'hELLO wORLD! FROM pYTHON'
-print(texto.swapcase())
+>>> texto = 'hELLO wORLD! FROM pYTHON'
+>>> print(texto.swapcase())
 Hello World! from Python
 ```
 
-* **title()**: Converts the first character of each word to upper case
+* **title()**: convierte el primer caracter de cada palaba en mayusculas
 
 ```python
+>>> texto = 'hello world! from python'
+>>> print(texto.title())
+Hello World! From Python
 ```
 
-* **translate()**: Returns a translated string
+* **translate(tabla)**: devuelve un stirng traducido
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| tabla | **Requerido**: Un diccionario o una tabla de asignación que describa cómo realizar el reemplazo |
 
 ```python
+>>> diccionario = {83:  80}
+>>> texto = "Quiero Sandia!"
+>>> print(texto.translate(diccionario))
+Quiero Pandia!
 ```
 
-* **upper()**: Converts a string into upper case
+* **upper()**: convierte todo el string a mayusculas
 
 ```python
+>>> texto = 'Hello World! from Python'
+>>> print(texto.upper())
+HELLO WORLD! FROM PYTHON
 ```
 
-* **zfill()**: Fills the string with a specified number of 0 values at the beginning
+* **zfill(len)**: Rellena el string con un número especificado de valores 0 al principio
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| len |**Requerido**: numero deseado del largo del string 
 
 ```python
+>>> numero = '99'
+>>> print(numero.zfill(10))
+0000000099
+
+texto = 'Python'
+print(texto.zfill(15))
+000000000Python
 ```
 
 ### Booleanos
@@ -637,17 +793,243 @@ Hello World! from Python
 
 ### Métodos de las listas
 
+* **append()**:	Adds an element at the end of the list
+
+```python
+
+```
+
+* **clear()**:	Removes all the elements from the list
+
+```python
+
+```
+
+* **copy()**:	Returns a copy of the list
+
+```python
+
+```
+
+* **count()**:	Returns the number of elements with the specified value
+
+```python
+
+```
+
+* **extend()**:	Add the elements of a list (or any iterable), to the end of the current list
+
+```python
+
+```
+
+* **index()**:	Returns the index of the first element with the specified value
+
+```python
+
+```
+
+* **insert()**:	Adds an element at the specified position
+
+```python
+
+```
+
+* **pop()**:	Removes the element at the specified position
+
+```python
+
+```
+
+* **remove()**:	Removes the first item with the specified value
+
+```python
+
+```
+
+* **reverse()**:	Reverses the order of the list
+
+```python
+
+```
+
+* **sort()**:	Sorts the list
+
+```python
+
+```
+
 ### Listas de comprensión
 
 ### Tuplas
+
+* **count()**:	Returns the number of times a specified value occurs in a tuple
+
+```python
+
+```
+
+* **index()**:	Searches the tuple for a specified value and returns the position of where it was found
+
+```python
+
+```
 
 ### Sets
 
 ### Métodos de los set
 
+* **add()**:	Adds an element to the set
+
+```python
+
+```
+
+* **clear()**:	Removes all the elements from the set
+
+```python
+
+```
+
+* **copy()**:	Returns a copy of the set
+difference()	Returns a set containing the difference between two or more sets
+
+```python
+
+```
+
+* **difference_update()**:	Removes the items in this set that are also included in another, specified set
+
+```python
+
+```
+
+* **discard()**:	Remove the specified item
+
+```python
+
+```
+
+* **intersection()**:	Returns a set, that is the intersection of two or more sets
+
+```python
+
+```
+
+* **intersection_update()**:	Removes the items in this set that are not present in other, specified set(s)
+
+```python
+
+```
+
+* **isdisjoint()**:	Returns whether two sets have a intersection or not
+
+```python
+
+```
+
+* **issubset()**:	Returns whether another set contains this set or not
+
+```python
+
+```
+
+* **issuperset()**:	Returns whether this set contains another set or not
+
+```python
+
+```
+
+* **pop()**:	Removes an element from the set
+
+```python
+
+```
+
+* **remove()**:	Removes the specified element
+
+```python
+
+```
+
+* **symmetric_difference()**:	Returns a set with the symmetric differences of two sets
+
+```python
+
+```
+
+* **symmetric_difference_update()**:	inserts the symmetric differences from this set and another
+union()	Return a set containing the union of sets
+update()	Update the set with another set, or any other iterable
+
+```python
+
+```
+
 ### Diccionarios
 
 ### Métodos de los diccionarios
+
+* **clear()**:	Removes all the elements from the dictionary
+
+```python
+
+```
+
+* **copy()**:	Returns a copy of the dictionary
+
+```python
+
+```
+
+* **fromkeys()**:	Returns a dictionary with the specified keys and value
+
+```python
+
+```
+
+* **get()**:	Returns the value of the specified key
+
+```python
+
+```
+
+* **items()**:	Returns a list containing a tuple for each key value pair
+
+```python
+
+```
+
+* **keys()**:	Returns a list containing the dictionary's keys
+
+```python
+
+```
+
+* **pop()**:	Removes the element with the specified key
+
+```python
+
+```
+
+* **popitem()**:	Removes the last inserted key-value pair
+
+```python
+
+```
+
+* **setdefault()**:	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+
+```python
+
+```
+
+* **update()**:	Updates the dictionary with the specified key-value pairs
+values()	Returns a list of all the values in the dictionary
+
+```python
+
+```
 
 ### Operadores de desición
 
