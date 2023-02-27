@@ -1,5 +1,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-green?style=flat&logo=python&logoColor=white&labelColor=101010)](https://python.org)
 ![Last commit](https://img.shields.io/github/last-commit/RobertoASF/Python?logo=git&logoColor=green)
+![Progreso](https://img.shields.io/badge/estado-en%20construcci%C3%B3n-red)
 
 
 # Python
@@ -126,6 +127,10 @@ False
 
 * **expandtabs(tabsize=8)**: devuelve una versión del string en la que los caracteres tabuladores se expanden a espacios en blanco. El tamaño de cada tabulador se define por el argumento tabsize.
 
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| tabsize |
+
 ```python
 
 ```
@@ -163,9 +168,19 @@ False
 ```python
 ```
 
-* **index(substring, start=0, end=len(string))**: devuelve el índice de la primera ocurrencia de la subcadena substring en el string dentro del rango start y end. Si no se encuentra la subcadena, lanza una excepción ValueError.
+* **index(value, start, end)**: devuelve el índice de la primera ocurrencia de la subcadena substring en el string dentro del rango start y end. Si no se encuentra la subcadena, lanza una excepción ValueError.
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| value | **Requerido**: calor a buscar |
+| start | **Opcional**: valor correspondiente a la posición donde comenzar a buscar, por defecto 0|
+| end | **Opcional**: valor correspondiente a la posición donde termina de buscar, por defecto es el largo del string |
+
 
 ```python
+>>> texto = "Hello, Wolrd! From Pyhton."
+>>> print(txt.index("y"))
+19
 ```
 
 * **isalnum()**: devuelve True si todos los caracteres del string son alfanuméricos, de lo contrario devuelve False.
@@ -399,7 +414,7 @@ Roberto      Sanchez
 >>> txt = 'Hola, chao!'
 >>> table = str.maketrans("o", "u")
 >>> print(txt.translate(table))
-Hola chau!
+Hola, chau!
 ```
 
 * **partition(valor)**: devuelve una tupla en la que el string es dividido en tres partes (la parte antes del valor buscado, el valor buscado y la parte que procede al valor buscado)
@@ -498,38 +513,102 @@ ______________Python
 ['manzan', ' confit', 'd', '']
 ```
 
-* **rstrip(characters)**: Returns a right trim version of the string
+* **rstrip(characters)**: Devuelve el recorte derecho de la cadena
 
 | PARÁMETRO  | DESCRIPCIÓN  |
 |:----------:|--------------|
-| characters | **Opcional**:  |
+| characters | **Opcional**: una coleccion de caracteres a remover como caracteres finales |
 
 ```python
+>>> texto = 'Python..--.-.-.-.-.-.-.-.-.'
+>>> print(texto.rstrip('..--.-.-.-.-.-.-.-.-.'))
+Python
 ```
 
-* **split()**: 	Splits the string at the specified separator, and returns a list
+* **split(separador, maxsplit)**: 	Divide el string en el separador especificado y devuelve una lista
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| separador | **Opcional**: Especifica el separador que se va a utilizar al dividir el string. De forma predeterminada, cualquier espacio en blanco es un separador |
+| maxsplit | **Opcional**: Especifica cuántas divisiones se van a realizar. El valor predeterminado es -1, que es "todas las ocurrencias"|
+
 
 ```python
+>>> texto = 'Hello World! from Python, this is the split method'
+>>> print(texto.split())
+['Hello', 'World!', 'from', 'Python,', 'this', 'is', 'the', 'split', 'method']
+
+>>> texto = 'Hello World! from Python, this is the split method'
+>>> print(texto.split(','))
+['Hello World! from Python', ' this is the split method']
 ```
 
-* **splitlines()**: Splits the string at line breaks and returns a list
+* **splitlines(keeplinebreaks)**: Divide el string en los saltos de línea y devuelve una lista
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| keeplinebreaks | **Opcional**: Especifica si los saltos de línea deben incluirse (**True**) o no (**False**). El valor predeterminado es False
 
 ```python
+>>> texto = 'Hello World!\nfrom Python'
+print(texto.splitlines())
+['Hello World!', 'from Python']
+
+>>> texto = 'Hello World!\nfrom Python'
+print(texto.splitlines(True))
+['Hello World!\n', 'from Python']
 ```
 
-* **startswith()**: Returns true if the string starts with the specified value
+* **startswith(value, start, end)**: Devuelve True si la cadena comienza con el valor especificado
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| value |  **Requerido**: valor a comprobar si con esto comienza el string|
+| start |  **Opcional**: valor entero que indica la posicion donde comienza la busqueda|
+| end | **Opcional**: valor entero que indica la posicion donde finaliza la busqueda|
 
 ```python
+>>> texto = 'Hello World! from Python'
+>>> print(texto.startswith('H'))
+True
+
+>>> texto = 'Hello World! from Python'
+>>> print(texto.startswith('H',1))
+False
+
+>>> texto = 'Hello World! from Python'
+>>> print(texto.startswith('e',1))
+True
 ```
 
-* **strip()**: Returns a trimmed version of the string
+* **strip(characters)**: Devuelve una versión recortada del string
+
+| PARÁMETRO  | DESCRIPCIÓN  |
+|:----------:|--------------|
+| characters | **Opcional**:  Un conjunto de caracteres para quitar como caracteres iniciales/finales|
 
 ```python
+>>> texto = "     Python     "
+>>> strip = texto.strip()
+>>> print("estudiando", strip , "para IA")
+estudiando Python para IA
+
+>>> texto = "______Python______"
+>>> strip = texto.strip('_')
+>>> print("estudiando", strip , "para IA")
+estudiando Python para IA
 ```
 
-* **swapcase()**: Swaps cases, lower case becomes upper case and vice versa
+* **swapcase()**: Devuelve un string donde todas las letras mayúsculas son minúsculas y viceversa.
 
 ```python
+texto = 'Hello World! from Python'
+print(texto.swapcase())
+hELLO wORLD! FROM pYTHON
+
+texto = 'hELLO wORLD! FROM pYTHON'
+print(texto.swapcase())
+Hello World! from Python
 ```
 
 * **title()**: Converts the first character of each word to upper case
