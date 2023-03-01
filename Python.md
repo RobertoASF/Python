@@ -186,7 +186,7 @@ print(y) # Output: 3.46
 
 ```python
 secuencia = [1, 2, 3, 4, 5]
-max_num = max(my_list)
+max_num = max(mi_lista)
 print(max_num) # Output: 5
 ```
 
@@ -898,10 +898,12 @@ print(texto.zfill(15))
 
 
 
-* **append()**:	Adds an element at the end of the list
+* **append()**:	Añade un elemento al final de la lista.
 
 ```python
-
+mi_lista = [1, 2, 3]
+mi_lista.append(4)
+print(mi_lista) # Output: [1, 2, 3, 4]
 ```
 
 * **clear()**:	Removes all the elements from the list
@@ -910,58 +912,78 @@ print(texto.zfill(15))
 
 ```
 
-* **copy()**:	Returns a copy of the list
+* **copy()**:	Devuelve una copia superficial de la lista.
 
 ```python
-
+mi_lista = [1, 2, 3]
+new_list = mi_lista.copy()
+print(new_list) # Output: [1, 2, 3]
 ```
 
-* **count()**:	Returns the number of elements with the specified value
+* **count()**:	Cuenta el número de veces que aparece un elemento en la lista.
 
 ```python
-
+mi_lista = [1, 2, 3, 2]
+x = mi_lista.count(2)
+print(x) # Output: 2
 ```
 
-* **extend()**:	Add the elements of a list (or any iterable), to the end of the current list
+* **extend()**:	Añade los elementos de otra lista al final de la lista actual.
 
 ```python
-
+mi_lista = [1, 2, 3]
+other_list = [4, 5, 6]
+mi_lista.extend(other_list)
+print(mi_lista) # Output: [1, 2, 3, 4, 5, 6]
 ```
 
-* **index()**:	Returns the index of the first element with the specified value
+* **index()**:	Devuelve la posición del primer elemento que tenga el valor especificado.
 
 ```python
-
+mi_lista = [1, 2, 3, 2]
+x = mi_lista.index(2)
+print(x) # Output: 1
 ```
 
-* **insert()**:	Adds an element at the specified position
+* **insert()**: Inserta un elemento en una posición específica de la lista.
 
 ```python
-
+mi_lista = [1, 2, 3]
+mi_lista.insert(1, 4)
+print(mi_lista) # Output: [1, 4, 2, 3]
 ```
 
-* **pop()**:	Removes the element at the specified position
+* **pop()**:	Elimina el elemento de la lista que se encuentra en la posición especificada, y lo devuelve.
 
 ```python
-
+mi_lista = [1, 2, 3]
+x = mi_lista.pop(1)
+print(mi_lista) # Output: [1, 3]
+print(x) # Output: 2
 ```
 
-* **remove()**:	Removes the first item with the specified value
+* **remove()**:	Elimina el primer elemento de la lista que tenga el valor especificado.
 
 ```python
-
+mi_lista = [1, 2, 3, 2]
+mi_lista.remove(2)
+print(mi_lista) # Output: [1, 3, 2]
 ```
 
-* **reverse()**:	Reverses the order of the list
+* **reverse()**:	Invierte el orden de los elementos de la lista.
 
 ```python
-
+mi_lista = [1, 2, 3]
+mi_lista.reverse()
+print(mi_lista) # Output: [3, 2, 1]
 ```
 
-* **sort()**:	Sorts the list
+* **sort()**:	Ordena los elementos de la lista en orden ascendente.
 
 ```python
-
+mi_lista = [3, 2, 1]
+mi_lista.sort()
+print(mi_lista) # Output: [1, 2, 3]
 ```
 
 ### Listas de comprensión
@@ -996,8 +1018,7 @@ print(texto.zfill(15))
 
 ```
 
-* **copy()**:	Returns a copy of the set
-difference()	Returns a set containing the difference between two or more sets
+* **copy()**:	Returns a copy of the set difference() Returns a set containing the difference between two or more sets
 
 ```python
 
@@ -1075,16 +1096,20 @@ update()	Update the set with another set, or any other iterable
 
 ### Métodos de los diccionarios
 
-* **clear()**:	Removes all the elements from the dictionary
+* **clear()**:	Elimina todos los elementos del diccionario.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+diccionario.clear()
+print(diccionario) # Output: {}
 ```
 
-* **copy()**:	Returns a copy of the dictionary
+* **copy()**:	Devuelve una copia superficial del diccionario.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+neuevo_diccionario = diccionario.copy()
+print(neuevo_diccionario) # Output: {"nombre": "Roberto", "edad": 33}
 ```
 
 * **fromkeys()**:	Returns a dictionary with the specified keys and value
@@ -1093,34 +1118,55 @@ update()	Update the set with another set, or any other iterable
 
 ```
 
-* **get()**:	Returns the value of the specified key
+* **get()**:	Devuelve el valor correspondiente a la clave especificada.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = diccionario.get("edad")
+print(x) # Output: 33
 ```
 
-* **items()**:	Returns a list containing a tuple for each key value pair
+* **items()**:	Devuelve una lista que contiene una tupla para cada par clave-valor en el diccionario.
+python
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = diccionario.items()
+print(x) # Output: [("nombre", "Roberto"), ("edad", 33)]
 ```
 
-* **keys()**:	Returns a list containing the dictionary's keys
+* **keys()**:	Devuelve una lista que contiene todas las claves del diccionario.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = diccionario.keys()
+print(x) # Output: ["nombre", "edad"]
 ```
 
-* **pop()**:	Removes the element with the specified key
+* **len()**: Devuelve la cantidad de pares clave-valor en el diccionario.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = len(diccionario)
+print(x) # Output: 2
 ```
 
-* **popitem()**:	Removes the last inserted key-value pair
+
+* **pop()**:	Elimina el elemento con la clave especificada y devuelve el valor correspondiente.
+```python
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = diccionario.pop("edad")
+print(x) # Output: 33
+print(diccionario) # Output: {"nombre": "Roberto"}
+```
+
+* **popitem()**:	Elimina el último par clave-valor insertado en el diccionario y lo devuelve como una tupla.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = diccionario.popitem()
+print(x) # Output: ("edad", 33)
+print(diccionario) # Output: {"nombre": "Roberto"}
 ```
 
 * **setdefault()**:	Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
@@ -1129,12 +1175,22 @@ update()	Update the set with another set, or any other iterable
 
 ```
 
-* **update()**:	Updates the dictionary with the specified key-value pairs
-values()	Returns a list of all the values in the dictionary
+* **update()**:	Actualiza el diccionario con los pares clave-valor de otro diccionario o de una secuencia de pares clave-valor.
 
 ```python
-
+diccionario = {"nombre": "Roberto", "edad": 33}
+diccionario.update({"edad": 34, "nacionalidad": "chilena"})
+print(diccionario) # Output: {"nombre": "Roberto", "edad": 34, "nacionalidad": "New chilena"}
 ```
+
+* **values()**: Devuelve una lista que contiene todos los valores del diccionario.
+
+```python
+diccionario = {"nombre": "Roberto", "edad": 33}
+x = diccionario.values()
+print(x) # Output: ["Roberto", 33]
+```
+
 
 ### Operadores de desición
 
@@ -1219,7 +1275,8 @@ mi_funcion()
 ```
 
 La salida de este código sería:
-```
+
+```python
 Antes de llamar a la función
 Hola desde mi_funcion
 Después de llamar a la función
@@ -1228,8 +1285,7 @@ El decorador envuelve la función original en una nueva función (wrapper) que a
 
 También se puede usar decoradores con argumentos. 
 
-<details>
-  <summary>Ejemplo:  </summary>
+Ejemplo:
 
  ```python
 def decorador_con_argumentos(argumento):
@@ -1246,7 +1302,7 @@ def mi_funcion():
     print("Hola desde mi_funcion")
 
 ```
-</details>  
+
 
   
 En este ejemplo, decorador_con_argumentos es un decorador de nivel superior que toma un argumento. El decorador real (decorador) toma la función y devuelve la nueva función envuelta (wrapper). Cuando _mi_funcion_ se llama, se envuelve en la nueva función creada por _decorador_con_argumentos_ y _decorador_.
