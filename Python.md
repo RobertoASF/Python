@@ -793,6 +793,8 @@ print(texto.zfill(15))
 
 ### Métodos de las listas
 
+
+
 * **append()**:	Adds an element at the end of the list
 
 ```python
@@ -1037,6 +1039,154 @@ values()	Returns a list of all the values in the dictionary
 
 ### Funciones
 
+En Python, una función es un bloque de código reutilizable que realiza una tarea específica. Las funciones son útiles para dividir el código en tareas más pequeñas y fáciles de entender. Para definir una función en Python, se utiliza la palabra clave def, seguida del nombre de la función y los parámetros entre paréntesis. Luego, se escribe el código de la función en un bloque indentado. Aquí hay un ejemplo sencillo:  
+
+<details>
+  <summary>Ejemplo:  </summary>
+
+```python
+def suma(num1, num2):
+    resultado = num1 + num2
+    return resultado
+
+resultado = suma(3, 5)
+print(resultado)
+```
+</details>
+
+
+En este ejemplo, se define una función llamada suma que toma dos parámetros _num1_ y _num2_. Dentro de la función, se suma los valores de _num1_ y _num2_, y se guarda el resultado en una variable llamada _resultado_. Luego, se devuelve el valor de _resultado_ con la palabra clave return. Finalmente, se llama a la función suma con los argumentos 3 y 5, y el valor devuelto se guarda en una variable llamada _resultado_, que se imprime en la pantalla.
+
+También es posible definir funciones sin parámetros. Por ejemplo:
+```python
+def imprimir_saludo():
+    print("Buenas buenas, ¿cómo estás?")
+imprimir_saludo()
+```
+En este ejemplo, se define una función llamada _imprimir_saludo_ que no toma ningún parámetro. Dentro de la función, se imprime un mensaje de saludo en la pantalla. Luego, se llama a la función _imprimir_saludo_ sin argumentos.
+
+Las funciones también pueden tener valores predeterminados para los parámetros.  
+
+<details>
+  <summary>Ejemplo:  </summary>
+
+ ```python
+def multiplicar(num1, num2=1):
+    resultado = num1 * num2
+    return resultado
+resultado1 = multiplicar(3, 5)
+resultado2 = multiplicar(3)
+print(resultado1)
+print(resultado2)
+```
+</details>
+_    
+
+En este ejemplo, se define una función llamada _multiplicar_ que toma dos parámetros num1 y num2, donde num2 tiene un valor predeterminado de 1. Dentro de la función, se multiplica los valores de num1 y num2, y se guarda el resultado en una variable llamada resultado. Luego, se devuelve el valor de resultado con la palabra clave return. Se llama a la función multiplicar con los argumentos 3 y 5, y el valor devuelto se guarda en una variable llamada resultado1, que se imprime en la pantalla. También se llama a la función multiplicar con un solo argumento 3, lo que hace que num2 tenga el valor predeterminado de 1. El valor devuelto se guarda en una variable llamada resultado2, que también se imprime en la pantalla.
+
+### Decoradores
+ Los decoradores permiten modificar el comportamiento de una función sin modificar su código. Los decoradores son funciones que toman como argumento otra función y devuelven una nueva función. Ejemplo:  
+ 1. Definir un decorador:
+
+ ```python
+def mi_decorador(funcion):
+    def wrapper(*args, **kwargs):
+        print("Mensaje antes de llamar a la función")
+        resultado = funcion(*args, **kwargs)
+        print("Mensaje después de llamar a la función")
+        return resultado
+    return wrapper
+```
+Este decorador simplemente agrega un mensaje de impresión antes y después de llamar a la función que se le pasa como argumento.
+
+2. Aplicar el decorador a una función:
+ ```python
+@mi_decorador
+def mi_funcion():
+    print("Hola desde mi_funcion")
+  ```
+Esto es equivalente a llamar a la función de esta manera:
+
+ ```python
+mi_funcion = mi_decorador(mi_funcion)
+  ```
+3. Llamar a la función:
+ ```python
+mi_funcion()
+```
+
+La salida de este código sería:
+```
+Antes de llamar a la función
+Hola desde mi_funcion
+Después de llamar a la función
+```
+El decorador envuelve la función original en una nueva función (wrapper) que agrega el mensaje de impresión antes y después de llamar a la función original.
+
+También se puede usar decoradores con argumentos. 
+
+<details>
+  <summary>Ejemplo:  </summary>
+
+ ```python
+def decorador_con_argumentos(argumento):
+    def decorador(funcion):
+        def wrapper(*args, **kwargs):
+            print("Argumento del decorador:", argumento)
+            resultado = funcion(*args, **kwargs)
+            return resultado
+        return wrapper
+    return decorador
+
+@decorador_con_argumentos("Hola")
+def mi_funcion():
+    print("Hola desde mi_funcion")
+
+```
+</details>  
+
+  
+En este ejemplo, decorador_con_argumentos es un decorador de nivel superior que toma un argumento. El decorador real (decorador) toma la función y devuelve la nueva función envuelta (wrapper). Cuando _mi_funcion_ se llama, se envuelve en la nueva función creada por _decorador_con_argumentos_ y _decorador_.
+
 ### Funciones Lambda
+
+ Las funciones lambda son una forma abreviada de definir funciones anónimas en Python. En lugar de definir una función con un nombre, puedes definir una función lambda en línea. Ejemplo:
+
+1. Definir una función lambda:
+ ```python
+lambda argumentos: expresión
+  ```
+La sintaxis de una función lambda consiste en la palabra clave lambda, seguida de una lista de argumentos separados por comas, seguidos de dos puntos y una expresión. La expresión es lo que la función lambda devuelve cuando se llama.
+
+Por ejemplo, aquí hay una función lambda que toma un argumento y lo duplica:  
+
+| nombre | =| "lambda" | argumento| : | función |
+|--------|:-:|---|--|:--:|:--:|
+| duplicar| = | "lambda" | x | : | x  * 2 |   
+```python
+duplicar = lambda x: x * 2
+```
+2. Llamar a la función lambda:
+```python
+resultado = duplicar(3)
+print(resultado)
+```
+La salida de este código sería:
+```python
+6
+```
+La función lambda '_duplicar_' toma un argumento 'x' 'y' devuelve 'x * 2'.' Cuando se llama a la función lambda con un argumento de 3, devuelve 6.  
+
+
+Las funciones lambda son útiles cuando necesitas una función simple que se use solo una vez. Por ejemplo, si necesitas ordenar una lista de números de menor a mayor, se puede usar la función sorted y una función lambda para especificar el criterio de ordenamiento:
+```python
+numeros = [1, 3, 2, 5, 4]
+numeros_ordenados = sorted(numeros, key=lambda x: x)
+print(numeros_ordenados)
+```
+La salida de este código sería:
+```python
+[1, 2, 3, 4, 5]
+```
 
 ### POO
