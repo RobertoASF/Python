@@ -1180,7 +1180,7 @@ print(diccionario) # Output: {"nombre": "Roberto"}
 ```python
 diccionario = {"nombre": "Roberto", "edad": 33}
 diccionario.update({"edad": 34, "nacionalidad": "chilena"})
-print(diccionario) # Output: {"nombre": "Roberto", "edad": 34, "nacionalidad": "New chilena"}
+print(diccionario) # Output: {"nombre": "Roberto", "edad": 34, "nacionalidad": "chilena"}
 ```
 
 * **values()**: Devuelve una lista que contiene todos los valores del diccionario.
