@@ -75,109 +75,212 @@ Los número enteros en python son aquellos que no tienen parte decimal
 * **abs(x)**: devuelve el valor absoluto de x.
 
 ```python
-
+x = -3
+y = abs(x)
+print(y) # Output: 3
 ```
 
 * **int(x)**: convierte x a un entero.
 
 ```python
-
+x = 3.7
+y = int(x)
+print(y) # Output: 3
 ```
 
 * **float(x)** : convierte x a un número decimal.
 
 ```python
-
+x = 4
+y = float(x)
+print(y) # Output: 4.0
 ```
 
 * **complex(real, imag)**: crea un número complejo con la parte real real y la parte imaginaria imag.
 
 ```python
-
+x = 2
+y = complex(x)
+print(y) # Output: (2+0j)
 ```
 
 * **pow(x, y[, z])**: devuelve x elevado a la potencia y, si se proporciona z se aplica el operador módulo.
 
 ```python
+x = 2
+y = pow(x, 3)
+print(y) # Output: 8
+```
 
+* **sqrt()**: Devuelve la raíz cuadrada de un número dado
+```python
+import math
+
+x = 16
+y = math.sqrt(x)
+print(y) # Output: 4.0
+```
+* **sin()**: Devuelven el seno de un ángulo dado
+
+```python
+import math
+
+x = math.pi/4 # ángulo de 45 grados
+y = math.sin(x)
+print(y) # Output: 0.7071067811865475
+```
+
+* **cos()**: Devuelve el coseno de un ángulo dado
+
+```python
+import math
+
+x = math.pi/3 # ángulo de 60 grados
+cos_x = math.cos(x)
+
+print(cos_x) # Output: 0.5
+```
+
+* **tan()**: Devuelve la tangente de un ángulo dado
+
+```python
+import math
+
+x = math.pi/3 # ángulo de 60 grados
+tan_x = math.tan(x)
+
+print(tan_x) # Output: 1.7320508075688767
+```
+
+* **log()**:
+
+```python
+import math
+
+x = 2.71828
+y = math.log(x)
+print(y) # Output: 0.999999327347282
 ```
 
 * **divmod(x, y)**: devuelve el cociente y el resto de la división de x entre y.
 
 ```python
+x = 10
+y = 3
 
+div, mod = divmod(x, y)
+
+print(div) # Output: 3
+print(mod) # Output: 1
 ```
 
 * **round(x[, n])**: devuelve el número x redondeado al número de dígitos especificado por n.
 
 ```python
-
+x = 3.456
+y = round(x, 2)
+print(y) # Output: 3.46
 ```
 
 * **max(iterable[, args...][key])**: devuelve el valor máximo en iterable, o el valor máximo entre los argumentos args, opcionalmente utilizando una función de key para comparar los elementos.
 
 ```python
-
+secuencia = [1, 2, 3, 4, 5]
+max_num = max(my_list)
+print(max_num) # Output: 5
 ```
 
 * **min(iterable[, args...][key])**: devuelve el valor mínimo en iterable, o el valor mínimo entre los argumentos args, opcionalmente utilizando una función de key para comparar los elementos.
 
 ```python
-
+secuencia = [1, 2, 3, 4, 5]
+min_num = min(secuencia)
+print(min_num) # Output: 1
 ```
 
 * **sum(iterable[, start])**: devuelve la suma de los elementos en iterable, opcionalmente comenzando por el valor start.
 
 ```python
-
+secuencia = [1, 2, 3, 4, 5]
+sum_list = sum(secuencia)
+print(sum_list) # Output: 15
 ```
 
-* **len(s)**: devuelve la longitud de la secuencia s.
+* **len(s)**: devuelve la longitud de la secuencia.
 
 ```python
+secuencia = [1, 2, 3, 4, 5]
 
+len_list = len(secuencia)
+print(len_list) # Output: 5
 ```
 
 * **hex(x)**: convierte x a una cadena que representa el valor en formato hexadecimal.
 
 ```python
+x = 42
 
+hex_x = hex(x)
+print(hex_x) # Output: 0x2a
 ```
 
 * **oct(x)**: convierte x a una cadena que representa el valor en formato octal.
 
 ```python
+x = 42
 
+oct_x = oct(x)
+print(oct_x) # Output: 0o52
 ```
 
 * **bin(x)**: convierte x a una cadena que representa el valor en formato binario.
 
 ```python
+x = 42
+
+bin_x = bin(x)
+print(bin_x) # Output: 0b101010
 
 ```
 
 * **isinstance(x, int/float/complex)**: devuelve True si x es una instancia de la clase int, float, o complex.
 
 ```python
+x = 42
+y = "42"
 
+is_int = isinstance(x, int)
+is_str = isinstance(y, str)
+
+print(is_int) # Output: True
+print(is_str) # Output: True
 ```
 
 * **is_integer()**: devuelve True si el número es un entero, de lo contrario devuelve False.
 
 ```python
+x = 42.0 + 3j
 
+is_int = x.real.is_integer()
+print(is_int) # Output: True
 ```
 
 * **real**: devuelve la parte real del número complejo.
 
 ```python
+x = 42.0 + 3j
 
+real_x = x.real
+print(real_x) # Output: 42.0
 ```
 
 * **imag**: devuelve la parte imaginaria del número complejo.
 
 ```python
+x = 42.0 + 3j
 
+imag_x = x.imag
+print(imag_x) # Output: 3.0
 ```
 
 ## String
@@ -1041,8 +1144,7 @@ values()	Returns a list of all the values in the dictionary
 
 En Python, una función es un bloque de código reutilizable que realiza una tarea específica. Las funciones son útiles para dividir el código en tareas más pequeñas y fáciles de entender. Para definir una función en Python, se utiliza la palabra clave def, seguida del nombre de la función y los parámetros entre paréntesis. Luego, se escribe el código de la función en un bloque indentado. Aquí hay un ejemplo sencillo:  
 
-<details>
-  <summary>Ejemplo:  </summary>
+Ejemplo:
 
 ```python
 def suma(num1, num2):
@@ -1052,12 +1154,14 @@ def suma(num1, num2):
 resultado = suma(3, 5)
 print(resultado)
 ```
-</details>
-
 
 En este ejemplo, se define una función llamada suma que toma dos parámetros _num1_ y _num2_. Dentro de la función, se suma los valores de _num1_ y _num2_, y se guarda el resultado en una variable llamada _resultado_. Luego, se devuelve el valor de _resultado_ con la palabra clave return. Finalmente, se llama a la función suma con los argumentos 3 y 5, y el valor devuelto se guarda en una variable llamada _resultado_, que se imprime en la pantalla.
 
-También es posible definir funciones sin parámetros. Por ejemplo:
+
+También es posible definir funciones sin parámetros. 
+
+Ejemplo:
+
 ```python
 def imprimir_saludo():
     print("Buenas buenas, ¿cómo estás?")
@@ -1065,12 +1169,12 @@ imprimir_saludo()
 ```
 En este ejemplo, se define una función llamada _imprimir_saludo_ que no toma ningún parámetro. Dentro de la función, se imprime un mensaje de saludo en la pantalla. Luego, se llama a la función _imprimir_saludo_ sin argumentos.
 
-Las funciones también pueden tener valores predeterminados para los parámetros.  
 
-<details>
-  <summary>Ejemplo:  </summary>
+Las funciones también pueden tener valores predeterminados para los parámetros.
 
- ```python
+Ejemplo:
+
+```python
 def multiplicar(num1, num2=1):
     resultado = num1 * num2
     return resultado
@@ -1079,10 +1183,9 @@ resultado2 = multiplicar(3)
 print(resultado1)
 print(resultado2)
 ```
-</details>
-_    
 
 En este ejemplo, se define una función llamada _multiplicar_ que toma dos parámetros num1 y num2, donde num2 tiene un valor predeterminado de 1. Dentro de la función, se multiplica los valores de num1 y num2, y se guarda el resultado en una variable llamada resultado. Luego, se devuelve el valor de resultado con la palabra clave return. Se llama a la función multiplicar con los argumentos 3 y 5, y el valor devuelto se guarda en una variable llamada resultado1, que se imprime en la pantalla. También se llama a la función multiplicar con un solo argumento 3, lo que hace que num2 tenga el valor predeterminado de 1. El valor devuelto se guarda en una variable llamada resultado2, que también se imprime en la pantalla.
+
 
 ### Decoradores
  Los decoradores permiten modificar el comportamiento de una función sin modificar su código. Los decoradores son funciones que toman como argumento otra función y devuelven una nueva función. Ejemplo:  
